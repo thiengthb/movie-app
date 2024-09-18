@@ -23,7 +23,7 @@ export default function App() {
 
 export function Toggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const [isSelected, setIsSelected] = useState(true);
 
   useEffect(() => {

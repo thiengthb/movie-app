@@ -2,7 +2,7 @@
 
 import Pagination from "@/components/Pagination";
 import MovieList from "./MovieList";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Show({ result }) {
   const [currentPage, setCurrentPage] = useState(1);

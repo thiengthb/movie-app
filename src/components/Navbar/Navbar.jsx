@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button, Image, Card} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 import {useTheme} from "next-themes";
 import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher"
 import Logo from "./Logo";

@@ -18,6 +18,7 @@ export default async function Page({params}) {
           }`}
           isBlurred 
           className="md:h-[210px] lg:h-[280px] xl:h-[330px]"
+          alt={movie.title || movie.name}
         />
         <div className=" flex-1 flex flex-col mt-10 md:mt-0">
           <div className="flex-1">

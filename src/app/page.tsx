@@ -4,7 +4,7 @@ const API_KEY = process.env.API_KEY;
 export default async function Home({
   searchParams,
 }: {
-  searchParams: { genre?: String };
+  searchParams: { genre?: string };
 }) {
   const genre = searchParams.genre || "fetchTrending";
   const res = await fetch(

@@ -1,5 +1,4 @@
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link, Divider} from "@nextui-org/react";
-import { useTheme } from "next-themes";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input } from "@nextui-org/react";
 
 export default function SignUpModal() {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();

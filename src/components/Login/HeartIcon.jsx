@@ -1,6 +1,5 @@
-export const HeartIcon = ({ size, height, width, ...props }) => {
+export const HeartIcon = ({ size, height, width }) => {
     // avoid passing non-DOM attributes to svg
-    const {isSelected, isIndeterminate, disableAnimation, ...otherProps} = props;
   
     return (
       <svg
