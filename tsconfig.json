@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/providers.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/providers.jsx", "src/app/error.jsx", "src/components/MovieList/MovieCard.jsx", "src/components/MovieList/MovieList.jsx", "src/app/movie/[id]/page.jsx", "src/components/MovieList/Show.jsx"],
   "exclude": ["node_modules"]
 }

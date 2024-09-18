@@ -4,7 +4,8 @@ import "./globals.css";
 
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar.jsx";
+import SearchBar from "@/components/Navbar/SearchBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,6 +36,9 @@ export default function RootLayout({
         <NextUIProvider>
           <NextThemesProvider attribute="class" defaultTheme="light">
             <Navbar></Navbar>
+            <div className="fixed z-40 py-3 px-2 md:px-10 w-full block lg:hidden">
+              <SearchBar />
+            </div>
             {children}
           </NextThemesProvider>
         </NextUIProvider>
