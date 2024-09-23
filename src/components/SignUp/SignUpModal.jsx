@@ -71,7 +71,7 @@ export default function SignUpModal() {
                     color="danger"
                     className="w-full"
                     >
-                    x
+                    Sign up with Google
                     </Button>
                 </ModalFooter>
                 </>

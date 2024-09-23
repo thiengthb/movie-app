@@ -1,11 +1,22 @@
-import React from 'react'
-import {Input} from "@nextui-org/react";
+"use client"
+
+import React, { useState } from 'react'
+import {Autocomplete, AutocompleteItem, Input, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import {SearchIcon} from "./SearchIcon.jsx";
 
-export default function SearchBar() {
+export default function SearchBar({data}) {
+
+  const [searchContent, setSearchContent] = useState("");
+
+  const handleSearchContent = (e) => {
+    setSearchContent(e.target.value);
+  }
+
   return (
     <div className="w-full rounded-2xl bg-gradient-to-tr from-pink-600 to-yellow-500 text-white">
-       <Input 
+      <Input 
+        value={searchContent}
+        onChange={handleSearchContent}
         isClearable
         placeholder='Search'
         startContent={
@@ -32,7 +43,7 @@ export default function SearchBar() {
                 "!cursor-text",
               ],
         }}
-        />
+      />
     </div>
   );
 }

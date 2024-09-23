@@ -5,14 +5,17 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, Navba
 import {useTheme} from "next-themes";
 import ThemeSwitcher from "@/components/ThemeSwitcher/ThemeSwitcher"
 import Logo from "./Logo";
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import LoginModal from "@/components/Login/LoginModal";
 import SignUpModal from "@/components/SignUp/SignUpModal";
+import { usePathname } from 'next/navigation'
+
 
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { theme } = useTheme();
+  const pathname = usePathname();
 
   const menuItems = [
     "Profile",
@@ -26,6 +29,12 @@ export default function App() {
     "Help & Feedback",
     "Log Out",
   ];
+
+  const navbarTitles = [
+    "Home",
+    "Trend",
+    "Top Rate"
+  ]
 
   return (
       <Navbar
@@ -48,21 +57,20 @@ export default function App() {
         </NavbarContent>
         
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem>
-            <Link href="/" color="foreground" className="px-3 text-lg">
-              Home
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="/" color="warning" aria-current="page" className="px-3 text-lg">
-              Trend
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="/" color="foreground" className="px-3 text-lg">
-              Top rated
-            </Link>
-          </NavbarItem>
+          {navbarTitles.map((title) => {
+            return pathname == `/${title.replace(/\s+/g, '').toLowerCase()}` || (pathname == '/' && title.toLowerCase() == "home") ? 
+            (<NavbarItem isActive>
+              <Link href={`/${title.replace(/\s+/g, '').toLowerCase()}`} color="warning" aria-current="page" className="px-3 text-xl font-semibold">
+                {title}
+              </Link>
+            </NavbarItem>)
+          :
+            (<NavbarItem>
+              <Link href={`/${title.replace(/\s+/g, '').toLowerCase()}`} color="foreground" className="px-3 text-md">
+                {title}
+              </Link>
+          </NavbarItem>)
+          })}
         </NavbarContent>
 
         <NavbarContent className="max-w-[300px] hidden lg:flex">
